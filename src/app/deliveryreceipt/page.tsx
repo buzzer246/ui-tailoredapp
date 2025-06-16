@@ -171,7 +171,7 @@ const DeliveryReceipt: React.FC = () => {
                 <label className="col-6 font-bold">Discount:</label>
                 <div className="col-6">- ₹{receipt.priceBreakup.discount}</div>
               </div>
-              <div className="field grid mt-3 pt-2 border-top-1 border-300">
+              <div className="field grid mt-3 pt-2">
                 <label className="col-6 font-bold text-lg">Total Cost:</label>
                 <div className="col-6 text-lg font-bold">₹{receipt.priceBreakup.totalCost}</div>
               </div>
