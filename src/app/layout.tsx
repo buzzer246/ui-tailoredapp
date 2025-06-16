@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import './globals.css'
 import Link from 'next/link'
 
 const geistSans = Geist({
@@ -25,16 +24,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html lang="en">
-      <body className="mt-5 mb-4">
-        <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-          <Link className ="home" href="/home" style={{ marginRight: '1rem' }}>OrderDetails</Link>
-          <Link  className ="home" href="/orderreceiptcard">OrderReceiptCard</Link>
-          <Link  className ="home" href="/deliveryreceipt">DeliveryReceipt</Link>
-        </nav>
-        <main style={{ padding: '1rem' }}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen flex flex-col">
+        {/* Responsive Navigation */}
+        <header className="sticky top-0 z-10 bg-white shadow-sm">
+          <nav className="container mx-auto px-4 py-3">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-center">
+              <Link 
+                href="/home" 
+                className="text-sm sm:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors home"
+              >
+                OrderDetails
+              </Link>
+              <Link 
+                href="/orderreceiptcard" 
+                className="text-sm sm:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors home"
+              >
+                OrderReceiptCard
+              </Link>
+              <Link 
+                href="/deliveryreceipt" 
+                className="text-sm sm:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors home"
+              >
+                DeliveryReceipt
+              </Link>
+            </div>
+          </nav>
+        </header>
+
+        {/* Main Content */}
+        <main className="flex-grow container mx-auto px-4 py-6">
           {children}
         </main>
+
+        {/* Optional Footer */}
+        <footer className="bg-gray-50 py-4 border-t">
+          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+            © {new Date().getFullYear()} Ui-TaioredApp
+          </div>
+        </footer>
       </body>
     </html>
   );
