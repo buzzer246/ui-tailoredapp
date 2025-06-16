@@ -60,7 +60,7 @@ export default function RootLayout({
         {/* Optional Footer */}
         <footer className="bg-gray-50 py-4 border-t">
           <div className="container mx-auto px-4 text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} Ui-TaioredApp
+            © {new Date().getFullYear()} Ui-TailoredApp
           </div>
         </footer>
       </body>
